@@ -129,10 +129,10 @@ const profile = {
       subtitle: "PhD Research",
       date: "Jan. 2024 – Nov. 2025",
       bullets: [
-        "Deployed a 3D Slicer-based annotation application on AWS AppStream for five physician reviewers, with S3-backed storage, user assignment scripts, and synchronized data flow between local and cloud.",
-        "Built a web interface that drove 3D Slicer's Python API to run Segment Editor operations — morphological expand/shrink, thresholding, and related edits — so clinicians could apply them in-browser instead of through the manual desktop tool.",
-        "Built a DICOM-metadata pipeline to curate CT enterography studies from a hospital archive of 2,000 scans, replacing a manual curation step; gathered requirements from physicians and refined the workflow on their feedback.",
-        "Skills: AWS (AppStream, S3), 3D Slicer, Python API, DICOM, Python, cross-functional collaboration.",
+        "Built and deployed a 3D Slicer-based annotation platform on AWS AppStream with S3-backed storage, user-assignment scripts, and synchronized local–cloud data flow; architected for multi-reviewer physician annotation and validated end-to-end on AppStream.",
+        "Built a web interface that drove 3D Slicer's Python API to run Segment Editor operations — morphological expand/shrink, thresholding, and related edits — so reviewers could apply them in-browser instead of through the manual desktop tool.",
+        "Built a metadata-curation pipeline (NIfTI headers and study-level JSON) to organize a CT enterography archive of 1,000+ studies, replacing a manual curation step.",
+        "Skills: AWS (AppStream, S3), 3D Slicer, Python API, NIfTI/DICOM, Python, cross-functional collaboration.",
       ],
     },
     {
