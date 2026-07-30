@@ -6,7 +6,7 @@ const profile = {
   skillCategories: [
     {
       name: "Programming",
-      items: ["Python (primary)", "MATLAB", "C", "VHDL", "Assembly", "Java*", "Bash"],
+      items: ["Python (primary)", "MATLAB", "C", "VHDL", "Assembly", "Java*", "some Bash"],
     },
     {
       name: "ML & Data",
@@ -52,7 +52,7 @@ const profile = {
         "AWS (AppStream, S3)",
         "Docker",
         "Git/GitHub",
-        "SLURM/HPC",
+        "SLURM on HPC clusters",
         "Distributed training (DDP)",
       ],
     },
@@ -117,11 +117,11 @@ const profile = {
       subtitle: "PhD Research",
       date: "Sep. 2024 – Present",
       bullets: [
-        "Ran a 120-cell experimental sweep (2 trainers × 4 label fractions × 5 folds × 3 seeds) comparing supervised baselines, Mean Teacher, and a custom dual-loss method on the RAOS Dataset (220 train / 30 val / 67 test), evaluating Dice on a single intestinal-tract class formed by merging colon, small bowel, and duodenum.",
-        "Built a custom preprocessing pipeline in nnUNet v2 to handle overlapping multi-class soft labels, including Blosc2 storage and DDP-aware batch composition.",
-        "Investigated a paradoxical result (Dice decreasing with more labeled data) across all 4 label fractions; isolated the cause to intrinsic label noise after PCGrad's 66–86% gradient-conflict rates failed to recover performance, and validated the finding on an external expert-annotated test set.",
-        "Communicated progress weekly to two supervisors and clinical collaborators, including an 8-minute talk to non-technical judges at GI Research Day.",
-        "Skills: PyTorch, nnU-Net v2, semi-supervised learning, distributed training (DDP), experimental design, statistical validation.",
+        "Designed a label-efficiency study on RAOS CT (176 train / 44 val / 67 held-out test) comparing a hard-GT nnU-Net baseline against a custom dual-loss trainer that adds MACCHIatO soft pseudo-labels, evaluating Dice on a single intestinal-tract class formed by merging colon, small bowel, and duodenum at 10/50/100% labeled data.",
+        "Diagnosed a ~1.0 Dice-pt regression in the custom training pipeline using controlled λ=0 ablations, decomposing it into two near-equal causes (per-sample vs. batch Dice; custom vs. stock spatial augmentation) and closing the gap to within noise of the stock baseline, thereby isolating the soft-label contribution from pipeline artifacts.",
+        "Implemented PCGrad gradient surgery to resolve the hard/soft objective conflict and instrumented per-update gradient-conflict measurement (rising 59%→86% as labeled data shrank); through controlled ablation, traced a rigorous negative result to systematic under-confidence in the pseudo-labels rather than to gradient conflict, redirecting the research toward source-reliability weighting.",
+        "Built a custom nnU-Net v2 preprocessing pipeline for overlapping multi-class soft labels with Blosc2 storage and a semi-supervised loader guaranteeing labeled/unlabeled batch composition.",
+        "Skills: PyTorch, nnU-Net v2, semi-supervised learning, multi-task gradient methods, ablation design, SLURM/HPC.",
       ],
     },
     {
@@ -130,9 +130,9 @@ const profile = {
       date: "Jan. 2024 – Nov. 2025",
       bullets: [
         "Deployed a 3D Slicer-based annotation application on AWS AppStream for five physician reviewers, with S3-backed storage, user assignment scripts, and synchronized data flow between local and cloud.",
-        "Built a DICOM-metadata pipeline to curate CT enterography studies from a hospital archive of 2,000 scans, replacing a manual curation step.",
-        "Gathered requirements from physician users directly and refined the interface and workflow based on their feedback.",
-        "Skills: AWS (AppStream, S3), 3D Slicer, DICOM, Python, cross-functional collaboration.",
+        "Built a web interface that drove 3D Slicer's Python API to run Segment Editor operations — morphological expand/shrink, thresholding, and related edits — so clinicians could apply them in-browser instead of through the manual desktop tool.",
+        "Built a DICOM-metadata pipeline to curate CT enterography studies from a hospital archive of 2,000 scans, replacing a manual curation step; gathered requirements from physicians and refined the workflow on their feedback.",
+        "Skills: AWS (AppStream, S3), 3D Slicer, Python API, DICOM, Python, cross-functional collaboration.",
       ],
     },
     {
